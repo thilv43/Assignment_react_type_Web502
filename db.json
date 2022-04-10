@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "id": 3,
+      "name": "Iphone 3",
+      "price": "300",
+      "img": "https://picsum.photos/300/300"
+    },
+    {
+      "id": 4,
+      "name": "Iphone 4",
+      "price": "300",
+      "img": "https://picsum.photos/300/300"
+    },
+    {
+      "name": "iphone 12",
+      "price": "300",
+      "id": 5
+    }
+  ],
+  "category": [],
+  "users": [
+    {
+      "email": "thilvph18070@fpt.edu.vn",
+      "password": "$2a$10$UlCknOjwrS6o4qzHk8ssB.F.zUTlG8xiXA6eoaiwqFCWK0./GnMNC",
+      "username": "wordpress",
+      "id": 1
+    }
+  ]
+}
