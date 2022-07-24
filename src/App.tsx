@@ -24,12 +24,15 @@ import {CartProvider} from 'react-use-cart';
 import CategoryList from "./pages/admin/Category/CategoryList";
 import CategoryEdit from "./pages/admin/Category/CategoryEdit";
 import CategoryAdd from "./pages/admin/Category/CategoryAdd";
+import { Category } from "./types/Category";
+import { addCate, updateCate } from "./api/Category";
 
 
 function App() {
-  const [isLoading, setIsLoading]  = useState(false);
-  const [products, setProducts] = useState<ProductType[]>([]);
 
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [category, setCategorys] = useState<Category[]>([]);
+  //products
   const removeItem = (id: number) => {
     remove(id);
     setProducts(products.filter(item => item.id !== id));
@@ -44,19 +47,32 @@ function App() {
     const { data } = await update(product);
     setProducts(products.map(item => item.id == data.id ? data : item));
   }
+  ///category
+  // const removeCate = (slug: number) => {
+  //   remove(slug);
+  //   setCategorys(category.filter(item => item.slug !== slug));
+  // }
+  // const onHandleAddCate= async (category: Category) => {
+  //   const {data} = await addCate(category);
+  //   setCategorys([...categorys, data]);
+  // }
+  // const onHandleUpdateCate = async (category: Category) => {
+  //   const {data} = await updateCate(category);
+  //   setCategorys(categorys.map(item => item.slug == data.slug ? data : item))
+  // }
 
   useEffect(() => {
     const getProducts = async() => {
       const {data} = await list();
       setProducts(data);
-    };
+    }
     getProducts();
   }, [])
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<WebsiteLayout/>} >
-            <Route index element={<HomePages/>} />
+            <Route index element={<HomePages products={products}/>} />
             <Route path="blogs" element={<BlogsPages/>} />
             <Route path="products">
               <Route index element={<ProductsPages products={products}/>} />
@@ -67,18 +83,18 @@ function App() {
             <Route path="Contact" element={<Contracpages/>} />
 
         </Route>
-        <Route path="admin" element={<PrivateRouter><AdminLayout /></PrivateRouter>} >
+        <Route path="admin" element={<AdminLayout /> }>
                 <Route index element={<Navigate to="dashboard"/>} />
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="products">
-                    <Route index element={<PrivateRouter><ProductManager products={products} onRemove={removeItem}/></PrivateRouter>} />
+                    <Route index element={<ProductManager products={products} onRemove={removeItem}/> } />
                     <Route path=":id/edit" element={<ProductEdit onUpdate={onHandleUpdate}/>}/>
                     <Route path="add" element={<ProductAdd name="" onAdd={onHandleAdd}/>} />
                 </Route>
                 <Route path="category">
-                    <Route index element={<CategoryList/>} />
-                    <Route path=":id/edit" element={<CategoryEdit/>} />
-                    <Route path="add" element={<CategoryAdd />} />
+                    {/* <Route index element={<CategoryList/>} /> */}
+                    {/* <Route path=":id/edit" element={<CategoryEdit/>} /> */}
+                    {/* <Route path="add" element={<CategoryAdd />} /> */}
                 </Route>
         </Route>
         <Route path="/signup" element={<Signup />}/>

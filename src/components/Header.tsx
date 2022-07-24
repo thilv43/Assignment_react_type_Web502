@@ -1,5 +1,7 @@
 import React from 'react'
 import Navbar from './layout/Navbar';
+import FormSearch from "../components/layout/FormSearch";
+
 
 
 type Props = {}
@@ -7,23 +9,22 @@ type Props = {}
 const Header = (props: Props) => {
     return (
     <header className=''>
-    <div className="space-x-2 justify-between grid grid-cols-3 gap-4 flex items-center mx-4">
+    <div className="justify-between grid grid-cols-3 gap-4 flex items-center">
+        <div className="mt-2">
+            <img src="https://mdbootstrap.com//img/Photos/Square/1.jpg"  className="max-w-full h-auto rounded-full w-[20%] h-[20%] ml-[5rem]" alt=""  />
+        </div>
         <div>
-            <a href="/signup">
-            <button type="button" className="inline-block mr-2 px-6 py-2.5 bg-blue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Đăng ký</button>
-            </a>
+            <FormSearch />
+        </div>
+        <div className="flex justify-end items-center">
+        <div className="mr-[2rem] text-2xl"> 
+            <i className="fa fa-shopping-basket " />
+        </div>
+        <div className='mr-6'>
             <a href="/signin">
             <button type="button" className="inline-block px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Đăng nhập</button>
             </a>
-        </div>
-
-        <div className="m-2">
-            <img src="https://mdbootstrap.com//img/Photos/Square/1.jpg"  className="max-w-full h-auto rounded-full w-[20%] h-[20%] ml-[11rem]" alt=""  />
-        </div>
-        {/* <i className="fa fa-shopping-basket" /> */}
-        <div>
-            <a href="">
-            </a>
+        </div>  
         </div>
     </div>
 

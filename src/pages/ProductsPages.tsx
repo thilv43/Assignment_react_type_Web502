@@ -1,7 +1,10 @@
 import React from 'react'
 import ProductList from '../components/ProductList'
+import { ProductType } from '../types/Product'
 
-type Props = {}
+type Props = {
+  products : ProductType[]
+}
 
 const ProductsPages = (props: Props) => {
   return (

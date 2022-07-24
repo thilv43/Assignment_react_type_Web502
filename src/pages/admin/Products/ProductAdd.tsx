@@ -9,7 +9,10 @@ type ProductAddProps = {
 
 type typeInputs= {
   name: string,
-  price: number
+  price: number,
+  img: string,
+  category: string,
+  desc: string,
 }
 
 const ProductAdd = (props: ProductAddProps) => {
@@ -54,7 +57,56 @@ const ProductAdd = (props: ProductAddProps) => {
     transition
     ease-in-out
     m-0
+    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput90" placeholder="Danh mục sản phẩm" {...register('category')} />
+        </div>
+        <div className="form-group mb-6">
+            <input className="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="formFile" {...register('img')}/>
+        </div>
+        <div className="form-group mb-6">
+        <input type="text" className="form-control block
+    w-full
+    px-3
+    py-1.5
+    text-base
+    font-normal
+    text-gray-700
+    bg-white bg-clip-padding
+    border border-solid border-gray-300
+    rounded
+    transition
+    ease-in-out
+    m-0
     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput90" placeholder="Giá sản phâm" {...register('price')} />
+        </div>
+        <div className="form-group mb-6">
+        <input type="text" className="form-control block
+    w-full
+    px-3
+    py-1.5
+    text-base
+    font-normal
+    text-gray-700
+    bg-white bg-clip-padding
+    border border-solid border-gray-300
+    rounded
+    transition
+    ease-in-out
+    m-0
+    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput90" placeholder="Chi tiết sản phẩm" {...register('desc')} />
         </div>
         <div className="form-group form-check text-center mb-6">
         </div>

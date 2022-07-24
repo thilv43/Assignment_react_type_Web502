@@ -9,10 +9,9 @@ type PrivateRouterProps = {
 const PrivateRouter = (props : PrivateRouterProps) => {
         const {user: {role}} = isAuthenticate();
         if(!role){
-            return <Navigate to={"/signin"} />
+            return <Navigate to={"/admin"} />
         }
     
-
     return props.children
 }
 

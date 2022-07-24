@@ -20,10 +20,19 @@ const ProductManager = (props: ProductManagerProps) => {
                                         STT
                                     </th>
                                     <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                        Danh mục sản phẩm
+                                    </th>
+                                    <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                                         Tên sản phẩm
                                     </th>
                                     <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                        Hình ảnh
+                                    </th>
+                                    <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                                         Giá sản phẩm
+                                    </th>
+                                    <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                        Mô tả sản phẩm
                                     </th>
                                     <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                                         Thêm
@@ -37,16 +46,26 @@ const ProductManager = (props: ProductManagerProps) => {
                                 </tr>
                             </thead>
                                             <tbody>
+                                                
                                                 {props.products.map((item, index) => {
-                                                    return <tr className="bg-white border-b">
+                                                    return <tr key={index} className="bg-white border-b">
                                                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                             {index + 1}
+                                                        </td>
+                                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                            {item.category}
                                                         </td>
                                                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                             {item.name}
                                                         </td>
                                                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                            {/* <img src={item.img} alt="" /> */}
+                                                        </td>
+                                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                             {item.price}
+                                                        </td>
+                                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                            {item.desc}
                                                         </td>
                                                         <td>
                                                             <Link to={`/admin/products/add`}>
@@ -71,8 +90,6 @@ const ProductManager = (props: ProductManagerProps) => {
                 </div>
             </div>
         </div>
-
-        //     
     )
 }
 

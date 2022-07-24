@@ -20,10 +20,7 @@ const CategoryManager = (props: CategoryManagerProps) => {
                                         STT
                                     </th>
                                     <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                                        Tên sản phẩm
-                                    </th>
-                                    <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                                        Giá sản phẩm
+                                        Danh mục sản phẩm
                                     </th>
                                     <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                                         Thêm

@@ -6,17 +6,21 @@ export const listCate = () => {
     return instance.get(url);
 }
 
-export const listOneCate = (slug: string) => {
+export const listOneCate = (slug: string | undefined) => {
     const url = `/category/${slug}`;
     return instance.get(url);
 }
+export const addCate = (categorys: Category) => {
+    const url = `category/${categorys.slug}`;
+    return instance.post(url, categorys)
+}
 
-export const editCate = (categorys: Category) => {
+export const updateCate = (categorys: Category) => {
     const url = `/category/${categorys.slug}`;
     return instance.put(url, categorys);
 }
 
-export const removeCate = (slug: string) => {
+export const removeCate = (slug: string | undefined) => {
     const url = `/category/${slug}`;
     return instance.delete(url);
 }

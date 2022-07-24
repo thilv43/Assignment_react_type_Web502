@@ -2,29 +2,43 @@
   "products": [
     {
       "id": 3,
-      "name": "Iphone 3",
-      "price": "300",
-      "img": "https://picsum.photos/300/300"
+      "category": "Điên thoại",
+      "name": "Iphone 5",
+      "price": "1000",
+      "img": "https://picsum.photos/300/300",
+      "desc": ""
     },
     {
       "id": 4,
+      "category": "Điên thoại",
       "name": "Iphone 4",
       "price": "300",
-      "img": "https://picsum.photos/300/300"
+      "img": "https://picsum.photos/300/300",
+      "desc": ""
     },
     {
-      "name": "iphone 12",
-      "price": "300",
+      "name": "Iphone 7",
+      "category": "Điên thoại",
+      "img": "https://picsum.photos/300/300",
+      "price": "500",
       "id": 5
     }
   ],
-  "category": [],
+  "categorys": [
+    
+  ],
   "users": [
     {
       "email": "thilvph18070@fpt.edu.vn",
       "password": "$2a$10$UlCknOjwrS6o4qzHk8ssB.F.zUTlG8xiXA6eoaiwqFCWK0./GnMNC",
       "username": "wordpress",
       "id": 1
+    },
+    {
+      "email": "abc123@gmail.com",
+      "password": "$2a$10$dbGCsPwZNX.MqnT4Ml6ufewwUNYcc84r1WCAp1tHUsrTD6cYW//Zm",
+      "username": "abc",
+      "id": 2
     }
   ]
 }
